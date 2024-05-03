@@ -6,9 +6,7 @@ Markup language that can be used for defining text to be read by Text-to-Speech 
 
 Part of the examples below. Rest can be found nicely written in [Google Cloud Docs](https://cloud.google.com/text-to-speech/docs/ssml).
 
-## Using the 2 scripts from the `/google-cloud-text-to-speech` directory
-
-To run them, you need to [set up the Google Cloud account](https://console.cloud.google.com/freetrial) and then [Authenticate to Text-to-Speech](https://cloud.google.com/text-to-speech/docs/authentication).
+> To run 2 scripts from the `/google-cloud-text-to-speech` directory, you need to [set up the Google Cloud account](https://console.cloud.google.com/freetrial) and then [Authenticate to Text-to-Speech](https://cloud.google.com/text-to-speech/docs/authentication).
 
 ## `say-as`
 
