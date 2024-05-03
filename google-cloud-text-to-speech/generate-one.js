@@ -4,18 +4,22 @@ const fs = require("fs");
 const fsPromises = require("node:fs/promises");
 const client = new textToSpeech.TextToSpeechClient();
 
-const fileName = "say-as"; // Replace with a file from `/src`
+const fileName = "prosody"; // Replace with a file from `/src`
 
-console.log("🔃 Processing:", fileName);
+async function generate() {
+  console.log("🔃 Processing:", fileName);
 
-const ssmlContent = fs.readFileSync(`./src/${fileName}.html`, "utf8");
+  const ssmlContent = fs.readFileSync(`./src/${fileName}.html`, "utf8");
 
-const [response] = await client.synthesizeSpeech({
-  input: { ssml: ssmlContent },
-  voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
-  audioConfig: { audioEncoding: "MP3" },
-});
+  const [response] = await client.synthesizeSpeech({
+    input: { ssml: ssmlContent },
+    voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
+    audioConfig: { audioEncoding: "MP3" },
+  });
 
-await fsPromises.writeFile(`./output/${fileName}.mp3`, response.audioContent, "binary");
+  await fsPromises.writeFile(`./output/${fileName}.mp3`, response.audioContent, "binary");
 
-console.log("🎉 Processed:", fileName, "and finished!");
+  console.log("🎉 Processed:", fileName, "and finished!");
+}
+
+generate();
