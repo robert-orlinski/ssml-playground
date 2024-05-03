@@ -1,7 +1,5 @@
 # Speech Synthesis Markup Language (SSML)
 
----
-
 Links: [Docs](https://cloud.google.com/text-to-speech/docs/ssml) [W3C Spec](https://www.w3.org/TR/speech-synthesis11/)
 
 ---
