@@ -1,12 +1,14 @@
+# Speech Synthesis Markup Language (SSML)
+
+---
+
 Links: [Docs](https://cloud.google.com/text-to-speech/docs/ssml) [W3C Spec](https://www.w3.org/TR/speech-synthesis11/)
 
 ---
 
 Markup language that can be used for defining text to be read by Text-to-Speech systems like Web Speech API or Google Text-to-Speech API.
 
-Played with this on this repo: [ssml-playground](https://github.com/robert-orlinski/ssml-playground).
-
-Part of the examples below. Rest can be found nicely written in [Google Docs](https://cloud.google.com/text-to-speech/docs/ssml).
+Part of the examples below. Rest can be found nicely written in [Google Cloud Docs](https://cloud.google.com/text-to-speech/docs/ssml).
 
 ## `say-as`
 
