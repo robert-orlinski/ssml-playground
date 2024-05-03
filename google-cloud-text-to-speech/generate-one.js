@@ -6,19 +6,16 @@ const client = new textToSpeech.TextToSpeechClient();
 
 const fileName = "say-as"; // Replace with a file from `/src`
 
-async function quickStart() {
-  console.log("🔃 Processing:", fileName);
+console.log("🔃 Processing:", fileName);
 
-  const ssmlContent = fs.readFileSync(`./src/${fileName}.html`, "utf8");
+const ssmlContent = fs.readFileSync(`./src/${fileName}.html`, "utf8");
 
-  const [response] = await client.synthesizeSpeech({
-    input: { ssml: ssmlContent },
-    voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
-    audioConfig: { audioEncoding: "MP3" },
-  });
+const [response] = await client.synthesizeSpeech({
+  input: { ssml: ssmlContent },
+  voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
+  audioConfig: { audioEncoding: "MP3" },
+});
 
-  await fsPromises.writeFile(`./output/${fileName}.mp3`, response.audioContent, "binary");
-  console.log("🎉 Processed:", fileName, "and finished!");
-}
+await fsPromises.writeFile(`./output/${fileName}.mp3`, response.audioContent, "binary");
 
-quickStart();
+console.log("🎉 Processed:", fileName, "and finished!");
