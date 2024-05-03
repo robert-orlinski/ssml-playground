@@ -1,10 +1,14 @@
 # Speech Synthesis Markup Language (SSML)
 
-Links: [Docs](https://cloud.google.com/text-to-speech/docs/ssml) [W3C Spec](https://www.w3.org/TR/speech-synthesis11/)
+Links: [Docs](https://cloud.google.com/text-to-speech/docs/ssml) [W3C Spec](https://www.w3.org/TR/speech-synthesis11/).
 
 Markup language that can be used for defining text to be read by Text-to-Speech systems like Web Speech API or Google Text-to-Speech API.
 
 Part of the examples below. Rest can be found nicely written in [Google Cloud Docs](https://cloud.google.com/text-to-speech/docs/ssml).
+
+## Using the 2 scripts from the `/google-cloud-text-to-speech` directory
+
+To run them, you need to [set up the Google Cloud account](https://console.cloud.google.com/freetrial) and then [Authenticate to Text-to-Speech](https://cloud.google.com/text-to-speech/docs/authentication).
 
 ## `say-as`
 
@@ -17,7 +21,7 @@ Part of the examples below. Rest can be found nicely written in [Google Cloud Do
 </speak>
 ```
 
-Interpreting something in specific way.
+Interpreting something in a specific way (as currency, unit, duration, etc.).
 
 More in [Docs](https://cloud.google.com/text-to-speech/docs/ssml#say%E2%80%91as).
 
