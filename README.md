@@ -120,16 +120,51 @@ Setting a voice.
 
 Playing audio.
 
+## `prosody`
+
+```html
+<speak>
+  <p>
+    <prosody rate="slow">This is the slow voice.</prosody>
+  </p>
+  <p>
+    <prosody rate="x-fast">This is the very fast voice.</prosody>
+  </p>
+  <p>
+    <prosody volume="x-soft">This is the very soft voice.</prosody>
+  </p>
+  <p>
+    <prosody volume="x-loud">This is the very loud voice.</prosody>
+  </p>
+  <p>
+    <prosody pitch="low">This is the low pitch voice.</prosody>
+  </p>
+  <p>
+    <prosody pitch="high">This is the high pitch voice.</prosody>
+  </p>
+  <p>
+    <prosody pitch="-10st">This is the customized pitch voice.</prosody>
+  </p>
+  <p>
+    <prosody pitch="+10st">This is another customized pitch voice.</prosody>
+  </p>
+</speak>
+```
+
+Giving specific tone to the voice.
+
 ## `emphasis`
 
 ```html
 <speak>
-  <emphasis level="strong">This is an strong announcement.</emphasis>
-  <emphasis level="moderate">This is an moderate announcement.</emphasis>
-  <emphasis level="emphasis">This is an regular emphasis announcement.</emphasis>
-  <emphasis level="reduced">This is an reduced-emphasis announcement.</emphasis>
+  <emphasis level="strong">This is an important announcement.</emphasis>
+  <emphasis level="moderate">This is an important announcement.</emphasis>
+  <emphasis level="emphasis">This is an important announcement.</emphasis>
+  <emphasis level="reduced">This is an important announcement.</emphasis>
 </speak>
 ```
+
+I like to call it `prosody`'s presets.
 
 ## `p` and `s`
 
