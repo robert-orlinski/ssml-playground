@@ -4,7 +4,7 @@ const fs = require("fs");
 const fsPromises = require("node:fs/promises");
 const client = new textToSpeech.TextToSpeechClient();
 
-const fileName = "prosody";
+const fileName = "emphasis";
 
 async function quickStart() {
   console.log("🔃 Processing:", fileName);
@@ -17,11 +17,7 @@ async function quickStart() {
     audioConfig: { audioEncoding: "MP3" },
   });
 
-  await fsPromises.writeFile(
-    `./output/${fileName}.mp3`,
-    response.audioContent,
-    "binary"
-  );
+  await fsPromises.writeFile(`./output/${fileName}.mp3`, response.audioContent, "binary");
   console.log("🎉 Processed:", fileName, "and finished!");
 }
 
