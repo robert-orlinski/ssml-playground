@@ -4,28 +4,30 @@ const fs = require("fs");
 const fsPromises = require("node:fs/promises");
 const client = new textToSpeech.TextToSpeechClient();
 
-const fileNamesToRead = ["conversation", "phoneme"];
+const fileNamesToRead = fs.files;
 
 async function quickStart() {
-  for (const fileName of fileNamesToRead) {
-    console.log("🔃 Processing:", fileName);
-    const ssmlContent = fs.readFileSync(`./src/${fileName}.html`, "utf8");
+  fs.readdir("./src", async (err, files) => {
+    for (const file of files) {
+      console.log("🔃 Processing:", file);
+      const ssmlContent = fs.readFileSync(`./src/${file}`, "utf8");
 
-    const [response] = await client.synthesizeSpeech({
-      input: { ssml: ssmlContent },
-      voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
-      audioConfig: { audioEncoding: "MP3" },
-    });
+      const [response] = await client.synthesizeSpeech({
+        input: { ssml: ssmlContent },
+        voice: { languageCode: "en-US", ssmlGender: "NEUTRAL" },
+        audioConfig: { audioEncoding: "MP3" },
+      });
 
-    await fsPromises.writeFile(
-      `./output/${fileName}.mp3`,
-      response.audioContent,
-      "binary"
-    );
-    console.log("🎉 Processed:", fileName);
-  }
+      await fsPromises.writeFile(
+        `./output/${file.replace("html", "mp3")}`,
+        response.audioContent,
+        "binary"
+      );
+      console.log("🎉 Processed:", file);
+    }
 
-  console.log("✅ Done!");
+    console.log("✅ Done!");
+  });
 }
 
 quickStart();

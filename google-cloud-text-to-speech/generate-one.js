@@ -4,7 +4,7 @@ const fs = require("fs");
 const fsPromises = require("node:fs/promises");
 const client = new textToSpeech.TextToSpeechClient();
 
-const fileName = "say-as";
+const fileName = "say-as"; // Replace with a file from `/src`
 
 async function quickStart() {
   console.log("🔃 Processing:", fileName);
